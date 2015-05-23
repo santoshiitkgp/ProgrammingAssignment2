@@ -1,8 +1,11 @@
-## the functions will store data (cache) of inverse of a matrix if calculated before
+## the functions will store data (cache) of inverse of a matrix (calculated before )
+## and returns the inverse of x  if calculated last time
+## lets assume inverse of matrix x is i
  
 
-## makeCacheMatrix will get, set, getInverse ,setInverse of input matrix x
-##inverse of x is i
+## makeCacheMatrix will allow to get and set the value of matrix x using x$get() 
+##and x$set(y)
+##it will also allow to get or set  x`s inverse (get if available) using x$getInverse() and x$setInverse(i)
 
 makeCacheMatrix <- function(x = matrix()) {
   i<-NULL 
@@ -19,9 +22,9 @@ makeCacheMatrix <- function(x = matrix()) {
 }
 
 
-## cacheSolve will look for inverse of matrix x if calculated before
-## it will return it
-## else it will get x and calculate its inverse by "solve()"
+## cacheSolve will look for inverse of matrix x 
+## if calculated before it will return it
+## else it will get x from makeCacheMatrix function and calculate its inverse by "solve()"
 ## then it will set the value of new inverse
 
 cacheSolve <- function(x, ...) {
